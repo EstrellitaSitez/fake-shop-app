@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { Typography } from "@mui/material"
 import DropDown from "./DropDown"
 
+
 export default function ProductsContainer(props){
 
     const [products, setProducts] = useState(props.products)
@@ -34,8 +35,8 @@ export default function ProductsContainer(props){
 
     return(
         <>  
-            <div >
-            <Typography  style={{margin:'1%'}} variant='h2'>
+            <div id='products'>
+            <Typography  variant='h2'>
                 Shop
             </Typography>
             <div style={{color:'darkgray', float:'right', marginRight:'2%'}}> 
@@ -43,7 +44,7 @@ export default function ProductsContainer(props){
             </div>
             <br></br>
             </div>
-        <div style={{display:'flex', flextDirection:'row', flexWrap:'wrap', marginTop:'1%', maxWidth:'96vw', marginLeft:'10%',}}>
+        <div  style={{display:'flex', flextDirection:'row', flexWrap:'wrap', marginTop:'3%', maxWidth:'96vw', marginLeft:'10%',}}>
             {makeProductCards()}
         </div>
         </>

@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from './Header';
 import HomePage from './HomePage';
 import ProductPage from './ProductPage';
+import LoginPage from './LoginPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route exact={true} path="/" element={<HomePage />} />
         <Route exact={true} path='/product/:id' element={<ProductPage/>} />
+        <Route exact={true} path='/login' element={<LoginPage/>} />
       </Routes>
       
     </UserProvider>
