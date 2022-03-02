@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import ProductsContainer from "./ProductsContainer"
-import ShoppingBagImg from './shoppingBagsImage.jpeg'
+import ShoppingImg from './shopping.png'
 
 import CircularProgress from '@mui/material/CircularProgress';
 
@@ -32,7 +32,7 @@ export default function HomePage(){
         <div style={{textAlign:'center'}}>
           
           <div style={{width:'fit-content', height:'fit-content',marginLeft:'auto', marginRight:'auto'}}>
-                        <img style={imgStyle} src={ShoppingBagImg} alt='shopping image' />
+                        <img style={imgStyle} src={ShoppingImg} alt='shopping image' />
                         </div>
           
                

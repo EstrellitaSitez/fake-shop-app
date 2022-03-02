@@ -21,13 +21,19 @@ export default function DropDown(props){
             console.log("SELECTED option", selectedOption)
             props.action(selectedOption)
         }
-    }, [selectedOption])
+    }, [selectedOption, options])
 
+    const  dropDownStyle = {
+        color:'black', 
+     
+    }
+console.log("OPTIONS", options)
     return(
         <Box sx={{ minWidth: 200 }}>
         <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label"> {props.label}</InputLabel>
+        <InputLabel sx={dropDownStyle} id="demo-simple-select-label"> {props.label}</InputLabel>
         <Select
+            sx={dropDownStyle}
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={selectedOption}
@@ -37,9 +43,15 @@ export default function DropDown(props){
             {
                 options && options.map(
                     (option,i)=> {
+                      if (typeof option == 'string' ){
                         return(
-                            <MenuItem key={i} value={option}>{option}</MenuItem>
+                            <MenuItem key={i} sx={dropDownStyle} value={option}>{option}</MenuItem>
                         )
+                      } else {
+                          return(
+                            <MenuItem key={i} sx={dropDownStyle} value={option.id}>{option.username}</MenuItem>
+                          )
+                      }
                     }
                 )
             }

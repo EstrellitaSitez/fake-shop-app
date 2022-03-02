@@ -22,7 +22,7 @@ export default function ProductsContainer(props){
     const makeProductCards = () => {
        return products.map((product)=>{
             return(
-               <ProductCard product = {product}/>
+               <ProductCard context ='homepage' product = {product}/>
             )
         })
     }

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import UserContext from "./UserContext";
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { Button, CardActions, CardActionArea, CircularProgress, Rating} from '@mui/material';
+import { CircularProgress} from '@mui/material';
 import LoginPrompt from "./LoginPrompt";
+import ProductCard from "./ProductCard";
+
 
 export default function ProductPage(){
     const { id } = useParams();
@@ -29,12 +29,7 @@ export default function ProductPage(){
 
     }, [product, isLoading])
 
-    const handleClick = () => {
-        const user = JSON.parse(localStorage.getItem('user'))
-        if (user == null){
-            showLoginPrompt(true)
-        }
-    }
+
 
     const handleClose =()=> {
         showLoginPrompt(false)
@@ -53,26 +48,24 @@ export default function ProductPage(){
                         <div style={{width:'50%', height:'70vh', marginLeft:'7%', marginTop:'5%'}}>
                             <img src={product.image} style={{width:'100%', height:'100%'}}/>
                         </div>
-                        <Card sx={{ maxWidth: '40%', marginTop:'10%', marginRight:'10%', border:'none', boxShadow:'none'}}>
-                        <CardActionArea>
-                        <CardContent>
-                            <Typography gutterBottom variant="h4" component="div">
-                                {product.title}
-                            </Typography>
-                            <Rating style={{marginBottom:'2%'}} name="read-only" value={product.rating.rate} readOnly />
-                            <Typography gutterBottom variant="h6" component="div">
-                                {product.description}
-                            </Typography>
-                            <Typography variant='h5'>
-                                ${product.price}
-                            </Typography>
-                        </CardContent>
-                        <CardActions sx={{marginLeft:'2%'}}>
-                        <Button onClick={handleClick} style={{backgroundColor:'black', color:'whitesmoke'}}> Add to cart </Button>
-                        </CardActions>
-                    </CardActionArea>
-                    </Card>
-                 
+                        
+                        <UserContext.Consumer>
+                            {
+                                ({user}) => (
+                                    <ProductCard 
+                                        context = 'product page' 
+                                        handleClick={()=>{
+                                            if(user == null){
+                                                showLoginPrompt(true)
+                                            }
+                                        }} 
+                                        product = {product}/>
+                            
+                                )
+                        }
+                        </UserContext.Consumer>
+                      
+                        
                     </div>
                             :
                             "Oops! Looks like there's been an error. Check your internet connection and refresh the page."
