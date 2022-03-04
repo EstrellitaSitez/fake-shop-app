@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.964fdded.css",
-    "main.js": "/static/js/main.0ce777df.js",
-    "static/js/787.228ccd47.chunk.js": "/static/js/787.228ccd47.chunk.js",
-    "static/media/shopping.png": "/static/media/shopping.8312f35c17b410ff9027.png",
-    "index.html": "/index.html",
-    "main.964fdded.css.map": "/static/css/main.964fdded.css.map",
-    "main.0ce777df.js.map": "/static/js/main.0ce777df.js.map",
-    "787.228ccd47.chunk.js.map": "/static/js/787.228ccd47.chunk.js.map"
+    "main.css": "/fake-shop-app/static/css/main.964fdded.css",
+    "main.js": "/fake-shop-app/static/js/main.d4bfb7c4.js",
+    "static/js/787.228ccd47.chunk.js": "/fake-shop-app/static/js/787.228ccd47.chunk.js",
+    "static/media/shopping.png": "/fake-shop-app/static/media/shopping.8312f35c17b410ff9027.png",
+    "index.html": "/fake-shop-app/index.html",
+    "main.964fdded.css.map": "/fake-shop-app/static/css/main.964fdded.css.map",
+    "main.d4bfb7c4.js.map": "/fake-shop-app/static/js/main.d4bfb7c4.js.map",
+    "787.228ccd47.chunk.js.map": "/fake-shop-app/static/js/787.228ccd47.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.964fdded.css",
-    "static/js/main.0ce777df.js"
+    "static/js/main.d4bfb7c4.js"
   ]
 }
