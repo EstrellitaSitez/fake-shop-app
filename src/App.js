@@ -106,7 +106,7 @@ function App() {
           :
           null
       }
-      <Routes>
+      <Routes  basename={process.env.PUBLIC_URL}>
         <Route exact={true} path="/" element={<HomePage />} />
         <Route exact={true} path='/product/:id' element={<ProductPage/>} />
         <Route exact={true} path='/login' element={<LoginPage setUser={setUser}/>} />
