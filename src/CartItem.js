@@ -30,8 +30,8 @@ export default function CartItem({productId, quantity, addToTotal}){
                         <img style={{width:'50%', height: '75%'}} src={product.image} alt={product.title}/>
                         <div style={{display:'flex', flexDirection:'column'}} >
                             <Typography variant='h4'> {product.title} </Typography>
-                            <Typography variant='h5'> Quantity: {quantity} </Typography>
-                            <Typography variant='h6'> Price: ${product.price * quantity} </Typography>
+                            <Typography variant='h5'> Quantity: {quantity} x ${product.price}</Typography>
+                            <Typography variant='h6'> total: ${product.price * quantity} </Typography>
                         </div>
                     </div>
      
