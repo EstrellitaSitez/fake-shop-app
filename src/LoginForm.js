@@ -1,11 +1,10 @@
 import { Typography, Avatar } from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import DropDown from "./DropDown";
-import { useNavigate } from "react-router-dom";
+
 
 export default function LoginForm(props){
 
-    let navigate = useNavigate();
 
     const action = (selectedUser) => {
         props.setUserId(selectedUser)

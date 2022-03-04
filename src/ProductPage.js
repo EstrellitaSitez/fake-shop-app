@@ -51,12 +51,14 @@ export default function ProductPage(){
                         
                         <UserContext.Consumer>
                             {
-                                ({user}) => (
+                                ({user, addToCart}) => (
                                     <ProductCard 
                                         context = 'product page' 
                                         handleClick={()=>{
                                             if(user == null){
                                                 showLoginPrompt(true)
+                                            } else{
+                                                addToCart(product)
                                             }
                                         }} 
                                         product = {product}/>
